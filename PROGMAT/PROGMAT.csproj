@@ -118,6 +118,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Books\BooksList.cshtml" />
+    <Content Include="Views\Books\AddBook.cshtml" />
+    <Content Include="Views\Books\EditBook.cshtml" />
+    <Content Include="Views\Books\SearchBook.cshtml" />
+    <Content Include="Views\Reservation\Reservation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

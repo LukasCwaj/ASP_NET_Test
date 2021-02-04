@@ -1,40 +1,70 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        * {
+            margin: 0;
+            overflow: auto
+        }
+        html, menu, form {
+            height: 100%
+        }
+        header {
+            text-align: center;
+            font-style: oblique;
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            background-color: silver;
+            position: fixed;
+            width: 100%;
+            font-weight: 200
+        }
+        main {
+            text-align: left;
+            width: 90%;
+            float: right;
+            height: 100%;
+            margin: 1px;
+            background-color: white;
+            margin-top: 27px
+        }
+        aside {
+            text-align: left;
+            width: 9%;
+            float: left;
+            background-color: whitesmoke;
+            height: 100%;
+            display: block;
+            margin-top: 27px
+        }
+        body {
+            background-color: darkslategrey;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+    <title>
+        LC_Library
+    </title>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderBody()
+    <form runat="server">
+        <header>
+            @RenderSection("header", true)
+        </header>
+        <main>
+            @RenderSection("main", true)
+        </main>
+        <aside>
+            <asp:HyperLink id="Reservations"
+                           NavigateUrl="Reservation.cshtml"
+                           Text="Reservations"
+                           Font-Size="12px"
+                           runat="server" />
+            <br />
+        </aside>
+    </form>
 </body>
 </html>

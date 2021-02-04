@@ -14,7 +14,6 @@ namespace PROGMAT.Controllers
 
         public ActionResult Index()
         {
-            var users = db.User.ToList();
             return View();
         }
     }
