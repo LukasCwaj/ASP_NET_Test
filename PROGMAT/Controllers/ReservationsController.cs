@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROGMAT.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,10 @@ namespace PROGMAT.Controllers
 {
     public class ReservationsController : Controller
     {
-        // GET: Reservatiom
+        private LibraryContext db = new LibraryContext();
         public ActionResult Reservation()
         {
-            return View();
+            return View(db.Book.AsEnumerable());
         }
     }
 }

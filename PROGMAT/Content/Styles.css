@@ -1,5 +1,5 @@
 ﻿* {
-    margin: 0;
+    margin: 5px;
     overflow: auto
 }
 
@@ -21,17 +21,17 @@ header {
 
 main {
     text-align: left;
-    width: 90%;
+    width: 85%;
     float: right;
     height: 100%;
     margin: 1px;
     background-color: white;
-    margin-top: 27px
+    margin-top: 27px;
 }
 
 aside {
     text-align: left;
-    width: 9%;
+    width: 12%;
     float: left;
     background-color: whitesmoke;
     height: 100%;

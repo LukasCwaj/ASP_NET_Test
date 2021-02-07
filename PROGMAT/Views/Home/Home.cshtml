@@ -1,9 +1,20 @@
-﻿@{
+﻿@model PROGMAT.Models.Users
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section header{
-Home Page
+    Home Page
 }
 @section main{
-    <h2>Index</h2>
-}
+    @using (Html.BeginForm("CreateUser", "Home", FormMethod.Post))
+    {
+    }
+        @using (Html.BeginForm("CreateUser", "Home", FormMethod.Post))
+        {
+            @Html.LabelFor(user => user.Login)
+            @Html.EditorFor(user => user.Login)
+            @Html.LabelFor(user => user.Password)
+            @Html.EditorFor(user => user.Password)
+            <button> add!!</button>
+        }
+    }

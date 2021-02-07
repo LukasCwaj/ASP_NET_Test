@@ -4,18 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using PROGMAT.Models;
+using PROGMAT.Migrations;
+using System.Data.Entity.Migrations;
 
 namespace PROGMAT.DataAccessLayer
 {
-    public class Initializer : DropCreateDatabaseAlways<LibraryContext>
+    public class Initializer : MigrateDatabaseToLatestVersion<LibraryContext,Configuration>
     {
-        protected override void Seed (LibraryContext context)
-        {
-            SeedLibrary(context);
-            base.Seed(context);
-        }
 
-        private void SeedLibrary(LibraryContext context)
+        public static void SeedLibrary(LibraryContext context)
         {
             var users = new List<Users>
             {
@@ -27,7 +24,7 @@ namespace PROGMAT.DataAccessLayer
             new Users() { UsersID = 6, Login = "Login6", Password = "Password6" },
             new Users() { UsersID = 7, Login = "Login7", Password = "Password7" }
             };
-            users.ForEach(i => context.User.Add(i));
+            users.ForEach(i => context.User.AddOrUpdate(i));
             context.SaveChanges();
             var books = new List<Books>
             {
@@ -38,7 +35,7 @@ namespace PROGMAT.DataAccessLayer
             new Books() { BooksID=5, Author="Someone5", Name="Name5", DateOfCreation=DateTime.Now, Description="Description5", IsReserved=true, ReservationsID=3, UsersId=3},
             new Books() { BooksID=6, Author="Someone6", Name="Name6", DateOfCreation=DateTime.Now, Description="Description6", IsReserved=true, ReservationsID=4, UsersId=2}
             };
-            books.ForEach(i => context.Book.Add(i));
+            books.ForEach(i => context.Book.AddOrUpdate(i));
             context.SaveChanges();
             var reservations = new List<Reservations>
             {
@@ -47,7 +44,7 @@ namespace PROGMAT.DataAccessLayer
             new Reservations() { ReservationsID=3, DateOfReservations=DateTime.Today },
             new Reservations() { ReservationsID=4, DateOfReservations=DateTime.Today },
             };
-            reservations.ForEach(i => context.Reservation.Add(i));
+            reservations.ForEach(i => context.Reservation.AddOrUpdate(i));
             context.SaveChanges();
         }
     }

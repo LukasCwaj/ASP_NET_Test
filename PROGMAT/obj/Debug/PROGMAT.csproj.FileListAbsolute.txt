@@ -51,3 +51,5 @@ C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.csproj.CoreCompi
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.csproj.CopyComplete
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.dll
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.pdb
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.Migrations.InitialCreate.resources
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.csproj.GenerateResource.cache

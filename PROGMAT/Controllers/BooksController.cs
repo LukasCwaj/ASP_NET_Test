@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
 using PROGMAT.DataAccessLayer;
+using PROGMAT.Models;
 
 namespace PROGMAT.Controllers
 {
     public class BooksController : Controller
     {
+        private LibraryContext db = new LibraryContext();
         public ActionResult AddBook()
         {
             return View();
@@ -20,8 +22,15 @@ namespace PROGMAT.Controllers
         }
         public ActionResult ListBook()
         {
-            LibraryContext context = new LibraryContext();
-            return View(context.Book.AsEnumerable());
+            return View(db.Book.AsEnumerable());
+        }
+        [HttpPost]
+        public ActionResult AddBookToDatabase(Books book)
+        {
+            book.DateOfCreation = DateTime.Now;
+            db.Book.Add(book);
+            db.SaveChanges();
+            return RedirectToAction("AddBook");
         }
     }
 }
