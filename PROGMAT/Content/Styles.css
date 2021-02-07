@@ -1,0 +1,57 @@
+﻿* {
+    margin: 0;
+    overflow: auto
+}
+
+html, menu, form {
+    height: 100%
+}
+
+header {
+    text-align: center;
+    font-style: oblique;
+    font-size: 24px;
+    color: blue;
+    font-weight: 500;
+    background-color: silver;
+    position: fixed;
+    width: 100%;
+    font-weight: 200
+}
+
+main {
+    text-align: left;
+    width: 90%;
+    float: right;
+    height: 100%;
+    margin: 1px;
+    background-color: white;
+    margin-top: 27px
+}
+
+aside {
+    text-align: left;
+    width: 9%;
+    float: left;
+    background-color: whitesmoke;
+    height: 100%;
+    display: block;
+    margin-top: 27px
+}
+
+body {
+    background-color: darkslategrey;
+    margin: 0;
+    height: 100%;
+}
+
+.actionlink {
+    font-size: 8px;
+    color: darkslategrey;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    align-self: center;
+    margin-top: 5px;
+}

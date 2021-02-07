@@ -12,9 +12,10 @@ namespace PROGMAT.Controllers
     {
         private LibraryContext db = new LibraryContext();
 
-        public ActionResult Index()
+        public ActionResult Home()
         {
             return View();
         }
+
     }
 }

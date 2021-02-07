@@ -95,13 +95,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="DataAccessLayer\Initializer.cs" />
     <Compile Include="DataAccessLayer\LibraryContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -117,12 +120,11 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Books\BooksList.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Reservations\Reservation.cshtml" />
     <Content Include="Views\Books\AddBook.cshtml" />
     <Content Include="Views\Books\EditBook.cshtml" />
-    <Content Include="Views\Books\SearchBook.cshtml" />
-    <Content Include="Views\Reservation\Reservation.cshtml" />
+    <Content Include="Views\Books\ListBook.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

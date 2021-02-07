@@ -11,12 +11,11 @@ namespace PROGMAT.DataAccessLayer
     {
         public LibraryContext() : base("LibraryContext")
         {
-
         }
-        static LibraryContext()
+        /*static LibraryContext()
         {
             Database.SetInitializer<LibraryContext>(new Initializer());
-        }
+        }*/
         public DbSet<Users> User { get; set; }
         public DbSet<Books> Book { get; set; }
         public DbSet<Reservations> Reservation { get; set; }

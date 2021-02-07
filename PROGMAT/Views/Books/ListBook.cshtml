@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PROGMAT.Models.Books>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Books List
+}
+@section main{
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Date of creation</th>
+            <th>Description</th>
+            <th>Is reserved</th>
+            <th>Reservation</th>
+        </tr>
+
+        @{
+            if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                <tr>
+                    <th>@item.BooksID </th>
+                    <th>@item.Name </th>
+                    <th>@item.Author </th>
+                    <th>@item.DateOfCreation </th>
+                    <th>@item.Description </th>
+                    <th>@item.IsReserved </th>
+                    <th> <button></button></th>
+                </tr>
+                }
+            }
+        }
+
+    </table>
+}
+
