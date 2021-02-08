@@ -8,9 +8,6 @@
 @section main{
     @using (Html.BeginForm("AddBookToDatabase", "Books", FormMethod.Post))
     {
-    }
-    @using (Html.BeginForm("AddBookToDatabase", "Books", FormMethod.Post))
-    {
         @Html.LabelFor(book => book.Name)
         @Html.EditorFor(book => book.Name)
         @Html.LabelFor(book => book.Author)

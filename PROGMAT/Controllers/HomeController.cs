@@ -16,12 +16,5 @@ namespace PROGMAT.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult CreateUser(Users user)
-        {
-            db.User.Add(user);
-            db.SaveChanges();
-            return RedirectToAction("Home");
-        }
     }
 }

@@ -8,24 +8,38 @@
 </head>
 <body>
     @RenderBody()
-    <form runat="server">
-        <header>
-            @RenderSection("header", true)
-        </header>
-        <main>
-            @RenderSection("main", true)
-        </main>
-        <aside>
-            @Html.ActionLink("Home", "Home", "Home")
-            <br />
-            @Html.ActionLink("List of Books", "ListBook", "Books")
-            <br />
-            @Html.ActionLink("Add Book", "AddBook", "Books")
-            <br />
-            @Html.ActionLink("Edit Book", "EditBook", "Books")
-            <br />
-            @Html.ActionLink("Reservations List", "Reservation", "Reservations")
-        </aside>
-    </form>
+    <header>
+        @RenderSection("header", true)
+        <div>
+            @{
+                if (Session["userID"] == null)
+                {
+                    <label > Loged as: Unknown</label>
+                }
+                else
+                {
+                    <label> Loged as: @Session["userName"].ToString()</label>
+                    @Html.ActionLink("Log Out", "LogOut", "Users")
+                }
+            }
+        </div>
+    </header>
+    <main>
+        <br />
+        @RenderSection("main", true)
+    </main>
+    <aside>
+        <hr style="width:80%;" />
+        @Html.ActionLink("Home Page", "Home", "Home")
+        <hr style="width:80%;" />
+        @Html.ActionLink("List of Books", "ListBook", "Books")
+        <hr style="width:80%;" />
+        @Html.ActionLink("Add Book", "AddBook", "Books")
+        <hr style="width:80%;" />
+        @Html.ActionLink("Edit Book", "EditBook", "Books")
+        <hr style="width:80%;" />
+        @Html.ActionLink("Reservations List", "Reservation", "Reservations")
+        <hr style="width:80%;" />
+    </aside>
 </body>
 </html>

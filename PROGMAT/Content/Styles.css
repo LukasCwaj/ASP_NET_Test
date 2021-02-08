@@ -1,10 +1,5 @@
-﻿* {
-    margin: 5px;
-    overflow: auto
-}
-
-html, menu, form {
-    height: 100%
+﻿html{
+    height: 100%;
 }
 
 header {
@@ -14,44 +9,49 @@ header {
     color: blue;
     font-weight: 500;
     background-color: silver;
-    position: fixed;
     width: 100%;
-    font-weight: 200
+    font-weight: 200;
+    position: fixed;
 }
 
 main {
     text-align: left;
-    width: 85%;
+    width: 88%;
     float: right;
     height: 100%;
-    margin: 1px;
     background-color: white;
-    margin-top: 27px;
+    margin-top:27px;
 }
 
 aside {
-    text-align: left;
+    text-align: center;
+    word-wrap:break-word;
     width: 12%;
     float: left;
     background-color: whitesmoke;
     height: 100%;
     display: block;
-    margin-top: 27px
+    margin-top: 27px;
 }
 
 body {
     background-color: darkslategrey;
-    margin: 0;
+    margin:0;
     height: 100%;
 }
 
-.actionlink {
-    font-size: 8px;
-    color: darkslategrey;
-}
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     align-self: center;
     margin-top: 5px;
+}
+label {
+    color: black;
+    margin: 2px;
+    font-size: 12px;
+}
+
+input text {
+    border-bottom-style: groove;
 }
