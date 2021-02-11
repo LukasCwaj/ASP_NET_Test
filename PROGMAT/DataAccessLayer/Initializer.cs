@@ -7,6 +7,7 @@ using PROGMAT.Models;
 using System.Data.Entity.Migrations;
 using PROGMAT.Migrations;
 
+
 namespace PROGMAT.DataAccessLayer
 {
     public class Initializer : MigrateDatabaseToLatestVersion<LibraryContext, Configuration>

@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\JavaScript.js" />
     <Content Include="Content\Styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -124,9 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102111249178_InitialCreate.cs" />
-    <Compile Include="Migrations\202102111249178_InitialCreate.designer.cs">
-      <DependentUpon>202102111249178_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202102111626252_InitialCreate.cs" />
+    <Compile Include="Migrations\202102111626252_InitialCreate.designer.cs">
+      <DependentUpon>202102111626252_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Books.cs" />
@@ -140,7 +141,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
-    <Content Include="Views\Reservations\Reservation.cshtml" />
     <Content Include="Views\Books\AddBook.cshtml" />
     <Content Include="Views\Books\EditBook.cshtml" />
     <Content Include="Views\Books\ListBook.cshtml" />
@@ -159,8 +159,8 @@
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202102111249178_InitialCreate.resx">
-      <DependentUpon>202102111249178_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102111626252_InitialCreate.resx">
+      <DependentUpon>202102111626252_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

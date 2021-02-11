@@ -17,10 +17,6 @@
         protected override void Seed(PROGMAT.DataAccessLayer.LibraryContext context)
         {
             Initializer.SeedLibrary(context);
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
         }
     }
 }
