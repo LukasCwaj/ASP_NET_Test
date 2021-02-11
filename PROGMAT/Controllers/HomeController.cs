@@ -14,6 +14,11 @@ namespace PROGMAT.Controllers
 
         public ActionResult Home()
         {
+            if (TempData["failLogIn"] != null)
+            {
+                ViewBag.Message = "Wrong user or password";
+                TempData.Remove("failLogIn");
+            }
             return View();
         }
     }

@@ -31,9 +31,17 @@ namespace PROGMAT.Controllers
         }
         public ActionResult LogIn(Users user)
         {
-            Session["userID"] = user.UsersID;
-            Session["userName"] = user.Login;
-            return RedirectToAction("ListBook", "Books");
+            var userDetail = db.User.Where(u => u.Login == user.Login && u.Password == user.Password).FirstOrDefault();
+            if (userDetail!=null)
+            {
+                Session["userID"] = user.UsersID;
+                Session["userName"] = user.Login;
+                TempData["logIn"] = "Succesfully logged";
+                return RedirectToAction("ListBook", "Books");
+            }
+            else
+                TempData["failLogIn"] = "Wrong user or password";
+                return RedirectToAction("Home", "Home");
         }
         public ActionResult LogOut()
         {

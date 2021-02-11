@@ -5,6 +5,10 @@
 
 @section header{
     Books List
+    <br />
+    <label class="red_label">
+        @ViewBag.Message
+    </label>
 }
 @section main{
     <table>
@@ -23,15 +27,15 @@
             {
                 foreach (var item in Model)
                 {
-                <tr>
-                    <th>@item.BooksID </th>
-                    <th>@item.Name </th>
-                    <th>@item.Author </th>
-                    <th>@item.DateOfCreation </th>
-                    <th>@item.Description </th>
-                    <th>@item.IsReserved </th>
-                    <th> <input type="checkbox" /> </th>
-                </tr>
+                    <tr>
+                        <th>@item.BooksID </th>
+                        <th>@item.Name </th>
+                        <th>@item.Author </th>
+                        <th>@item.DateOfCreation.ToString("d") </th>
+                        <th>@item.Description </th>
+                        <th>@item.IsReserved </th>
+                        <th> <input type="checkbox" /> </th>
+                    </tr>
                 }
             }
         }

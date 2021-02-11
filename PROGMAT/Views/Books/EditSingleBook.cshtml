@@ -1,0 +1,24 @@
+﻿@model  PROGMAT.Models.Books
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section header{
+    Edit Single Book
+}
+@section main{
+    @using (Html.BeginForm("EditBookInDatabase", "Books", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(book => book.BooksID)
+        @Html.LabelFor(book => book.Name)
+        @Html.EditorFor(book => book.Name)
+        @Html.LabelFor(book => book.Author)
+        @Html.EditorFor(book => book.Author)
+        @Html.LabelFor(book => book.Description)
+        @Html.EditorFor(book => book.Description)
+        @Html.LabelFor(book => book.DateOfCreation)
+        @Html.TextBoxFor(book => book.DateOfCreation, "{0:dd/MM/yyyy}")
+        <button> Edit</button>
+    }
+}
+

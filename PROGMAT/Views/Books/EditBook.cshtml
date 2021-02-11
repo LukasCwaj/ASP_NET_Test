@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<PROGMAT.Models.Books>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -6,6 +6,43 @@
     Edit Book
 }
 @section main{
-    <h2>Index</h2>
+    @using (Html.BeginForm("EditBook", "Books", FormMethod.Post))
+    {
+        <b>Search By:</b>
+        @Html.RadioButton("searchBy", "Name")
+        <label>Name</label>
+        @Html.RadioButton("searchBy", "Author")
+        <label>Author</label>
+        @Html.TextBox("search")
+        <button> Search</button>
+    }
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Date of creation</th>
+            <th>Description</th>
+            <th>Is reserved</th>
+            <th>Edit</th>
+        </tr>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.BooksID </th>
+                    <th>@item.Name </th>
+                    <th>@item.Author </th>
+                    <th>@item.DateOfCreation.ToString("d") </th>
+                    <th>@item.Description </th>
+                    <th>@item.IsReserved </th>
+                    <th><button onClick="location.href =' @Url.Action("EditSingleBook", "Books", new { id = item.BooksID  })';return false;">Edit</button></th>
+                </tr>
+            }
+        }
+
+    </table>
 }
 

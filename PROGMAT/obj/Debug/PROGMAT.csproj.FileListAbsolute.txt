@@ -51,5 +51,12 @@ C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.csproj.CoreCompi
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.csproj.CopyComplete
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.dll
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.pdb
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\Antlr3.Runtime.dll
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\Newtonsoft.Json.dll
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\System.Web.Optimization.dll
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\WebGrease.dll
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\Antlr3.Runtime.pdb
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\Newtonsoft.Json.xml
+C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\bin\System.Web.Optimization.xml
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.Migrations.InitialCreate.resources
 C:\Users\Cwaniak\source\repos\PROGMAT\PROGMAT\obj\Debug\PROGMAT.csproj.GenerateResource.cache

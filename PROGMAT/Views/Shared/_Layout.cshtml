@@ -1,7 +1,8 @@
-﻿<html>
+﻿@using System.Web.Optimization;
+<html>
 <head>
     @RenderSection("head", false)
-    <link href="~/Content/Styles.css" rel="stylesheet" />
+    @Styles.Render("~/Content/Styles.css")
     <title>
         LC_Library
     </title>
@@ -10,19 +11,7 @@
     @RenderBody()
     <header>
         @RenderSection("header", true)
-        <div>
-            @{
-                if (Session["userID"] == null)
-                {
-                    <label > Loged as: Unknown</label>
-                }
-                else
-                {
-                    <label> Loged as: @Session["userName"].ToString()</label>
-                    @Html.ActionLink("Log Out", "LogOut", "Users")
-                }
-            }
-        </div>
+        
     </header>
     <main>
         <br />
@@ -39,6 +28,18 @@
         @Html.ActionLink("Edit Book", "EditBook", "Books")
         <hr style="width:80%;" />
         @Html.ActionLink("Reservations List", "Reservation", "Reservations")
+        <hr style="width:80%;" />
+        <div>
+            @{ if (Session["userID"] == null)
+                {
+                    <label class="blue_label"> Loged as: Unknown</label> }
+                else
+                {
+                    <label class="blue_label"> Loged as: @Session["userName"].ToString()</label>
+                    @Html.ActionLink("Log Out", "LogOut", "Users") 
+                } 
+             }
+        </div>
         <hr style="width:80%;" />
     </aside>
 </body>

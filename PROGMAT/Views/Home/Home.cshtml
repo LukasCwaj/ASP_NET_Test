@@ -4,16 +4,22 @@
 }
 @section header{
     Home Page
+    <br />
+    <label class="red_label">
+        @ViewBag.Message
+    </label>
 }
 @section main{
-
+    <label class="red_label">
+        @ViewBag.Message
+    </label>
     @using (Html.BeginForm("CreateUser", "Users", FormMethod.Post))
     {
         @Html.LabelFor(user => user.Login)
         @Html.EditorFor(user => user.Login)
         @Html.LabelFor(user => user.Password)
         @Html.EditorFor(user => user.Password)
-        <button> add!!</button>
+        <button> Register</button>
     }
     @using (Html.BeginForm("LogIn", "Users", FormMethod.Post))
     {
@@ -21,6 +27,6 @@
         @Html.EditorFor(user => user.Login)
         @Html.LabelFor(user => user.Password)
         @Html.EditorFor(user => user.Password)
-        <button> logIN</button>
+        <button> LogIN</button>
     }
 }

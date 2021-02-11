@@ -4,7 +4,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using DataAccessLayer;
+    using PROGMAT.DataAccessLayer;
 
     public sealed class Configuration : DbMigrationsConfiguration<PROGMAT.DataAccessLayer.LibraryContext>
     {
@@ -17,6 +17,10 @@
         protected override void Seed(PROGMAT.DataAccessLayer.LibraryContext context)
         {
             Initializer.SeedLibrary(context);
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
         }
     }
 }

@@ -4,6 +4,10 @@
 }
 @section header{
     Add Book
+    <br />
+    <label class="red_label">
+        @ViewBag.Message
+    </label>
 }
 @section main{
     @using (Html.BeginForm("AddBookToDatabase", "Books", FormMethod.Post))
@@ -14,6 +18,8 @@
         @Html.EditorFor(book => book.Author)
         @Html.LabelFor(book => book.Description)
         @Html.EditorFor(book => book.Description)
+        @Html.LabelFor(book => book.DateOfCreation)
+        @Html.EditorFor(book => book.DateOfCreation)
         <button> add!!</button>
     }
 }
