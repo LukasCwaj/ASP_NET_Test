@@ -147,6 +147,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Search\SearchBook.cshtml" />
     <Content Include="Views\Books\EditSingleBook.cshtml" />
+    <Content Include="Views\Reservations\ReservationList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -20,7 +20,6 @@
             <th>Description</th>
             <th>Is reserved</th>
             <th>Reservation</th>
-            <th>Cancle Reservation</th>
         </tr>
 
         @{
@@ -35,8 +34,16 @@
                     <th>@item.DateOfCreation.ToString("d") </th>
                     <th>@item.Description </th>
                     <th>@item.IsReserved </th>
-                    <th> <button onClick="location.href =' @Url.Action("AddReservation", "Reservations", new { id = item.BooksID  })';return false;">Click</button> </th>
-                    <th> <button onClick="location.href =' @Url.Action("DeleteReservation", "Reservations", new { id = item.BooksID  })';return false;">Click</button> </th>
+                    <th>
+                        @if (!item.IsReserved)
+                        {
+                            <button onClick="location.href =' @Url.Action("AddReservation", "Reservations", new { id = item.BooksID })';return false;">Click</button>
+                        }
+                        @if (item.IsReserved)
+                        {
+                        <label class="red_label">Reserved</label>
+                        }
+                        </th>
                 </tr>
                 }
             }

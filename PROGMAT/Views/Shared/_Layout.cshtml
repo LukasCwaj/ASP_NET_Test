@@ -28,7 +28,7 @@
         <hr style="width:80%;" />
         @Html.ActionLink("Edit Book", "EditBook", "Books")
         <hr style="width:80%;" />
-        @Html.ActionLink("Reservations List", "Reservation", "Reservations")
+        @Html.ActionLink("Reservations List", "ReservationList", "Reservations")
         <hr style="width:80%;" />
         <div>
             @{ if (Session["userID"] == null)
@@ -36,7 +36,7 @@
                     <label class="blue_label"> Loged as: Unknown</label> }
                 else
                 {
-                    <label class="blue_label"> Loged as: @Session["userName"].ToString()</label>
+        <label class="blue_label"> Loged as: @Session["userName"].ToString()</label>
                     @Html.ActionLink("Log Out", "LogOut", "Users") 
                 } 
              }

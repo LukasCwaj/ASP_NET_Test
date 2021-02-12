@@ -57,7 +57,7 @@ namespace PROGMAT.Controllers
             }
             catch (Exception e)
             {
-                return View("Error",new HandleErrorInfo(e, "EmployeeInfo", "Create"));
+                return View("Error",new HandleErrorInfo(e, "Books", "AddtBookToDatabase"));
             }
         }
         public ActionResult EditSingleBook(int? id)
@@ -81,7 +81,7 @@ namespace PROGMAT.Controllers
             }
             catch (Exception e)
             {
-                return View("Error", new HandleErrorInfo(e, "EmployeeInfo", "Create"));
+                return View("Error", new HandleErrorInfo(e, "Books", "EditBookInDatabase"));
             }
         }
     }
