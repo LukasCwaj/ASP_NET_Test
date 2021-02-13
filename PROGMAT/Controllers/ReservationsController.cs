@@ -19,10 +19,11 @@ namespace PROGMAT.Controllers
                 return HttpNotFound();
             }
             book.IsReserved = true;
-            if (Session["userID"]==null)
+            if (Session["userID"] ==null)
             {
                 return RedirectToAction("Home", "Home");
             }
+            //string currentUserIDString = Session["userID"] as string;
             int currentUserID = Convert.ToInt32(Session["userID"].ToString());
             int currentBookID = book.BooksID;
             DateTime dateOfCreation = Convert.ToDateTime(DateTime.Now.ToString("d"));

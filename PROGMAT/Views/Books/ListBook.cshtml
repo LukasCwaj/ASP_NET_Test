@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<PROGMAT.Models.Books>
+@using System.Web.Optimization;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
     Books List
-    <br />
-    <label class="red_label">
-        @ViewBag.Message
-    </label>
 }
 @section main{
     <table>
@@ -21,30 +18,29 @@
             <th>Is reserved</th>
             <th>Reservation</th>
         </tr>
-
         @{
             if (Model != null)
             {
                 foreach (var item in Model)
                 {
-                <tr>
-                    <th>@item.BooksID </th>
-                    <th>@item.Name </th>
-                    <th>@item.Author </th>
-                    <th>@item.DateOfCreation.ToString("d") </th>
-                    <th>@item.Description </th>
-                    <th>@item.IsReserved </th>
-                    <th>
-                        @if (!item.IsReserved)
-                        {
-                            <button onClick="location.href =' @Url.Action("AddReservation", "Reservations", new { id = item.BooksID })';return false;">Click</button>
-                        }
-                        @if (item.IsReserved)
-                        {
-                        <label class="red_label">Reserved</label>
-                        }
+                    <tr>
+                        <th>@item.BooksID </th>
+                        <th>@item.Name </th>
+                        <th>@item.Author </th>
+                        <th>@item.DateOfCreation.ToString("d") </th>
+                        <th>@item.Description </th>
+                        <th>@item.IsReserved </th>
+                        <th>
+                            @if (!item.IsReserved)
+                            {
+                                <button onClick="location.href =' @Url.Action("AddReservation", "Reservations", new { id = item.BooksID})';return false;">Click</button>
+                            }
+                            @if (item.IsReserved)
+                            {
+                                <label class="red_label">Reserved</label>
+                            }
                         </th>
-                </tr>
+                    </tr>
                 }
             }
         }

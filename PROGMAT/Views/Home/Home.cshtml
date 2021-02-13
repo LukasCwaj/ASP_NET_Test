@@ -4,14 +4,9 @@
 }
 @section header{
     Home Page
-    <br />
-    <label class="red_label">
-        @ViewBag.Message
-    </label>
 }
 @section main{
     <label class="red_label">
-        @ViewBag.Message
     </label>
     @using (Html.BeginForm("CreateUser", "Users", FormMethod.Post))
     {

@@ -5,10 +5,6 @@
 
 @section header{
     Reservations List
-    <br />
-    <label class="red_label">
-        @ViewBag.Message
-    </label>
 }
 @section main{
     <table>
@@ -19,23 +15,22 @@
             <th>Date of reservation</th>
             <th>Cancle Reservation</th>
         </tr>
-
-        @{
-            if (Model != null)
-            {
-                foreach (var item in Model)
+            @{
+                if (Model != null)
                 {
-                <tr>
-                    <th>@item.ReservationsID</th>
-                    <th>@item.BooksID</th>
-                    <th>@item.UsersId</th>
-                    <th>@item.DateOfReservations.ToString("d")</th>
-                    <th> <button onClick="location.href =' @Url.Action("DeleteReservation", "Reservations", new { idR = item.ReservationsID, idB = item.BooksID })';return false;">Click</button> </th>
-                </tr>
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.ReservationsID</th>
+                            <th>@item.BooksID</th>
+                            <th>@item.UsersId</th>
+                            <th>@item.DateOfReservations.ToString("d")</th>
+                            <th> <button onClick="location.href =' @Url.Action("DeleteReservation", "Reservations", new { idR = item.ReservationsID, idB = item.BooksID })';return false;">Click</button> </th>
+                        </tr>
+                    }
                 }
             }
-        }
 
-    </table>
+        </table>
 }
 

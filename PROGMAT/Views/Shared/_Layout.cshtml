@@ -3,7 +3,7 @@
 <head>
     @RenderSection("head", false)
     @Styles.Render("~/Content/Styles.css")
-    <script src="~/Content/Styles.css"></script>
+    <script src="~/Content/JavaScript.js"></script>
     <title>
         LC_Library
     </title>
@@ -15,6 +15,15 @@
         
     </header>
     <main>
+        @if (ViewBag.Message != null) 
+        {
+            <script type="text/javascript">
+            window.onload = function ()
+            {
+                alert("@ViewBag.Message");
+            };
+            </script>
+        }
         <br />
         @RenderSection("main", true)
     </main>

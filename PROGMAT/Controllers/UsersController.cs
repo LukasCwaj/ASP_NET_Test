@@ -34,8 +34,8 @@ namespace PROGMAT.Controllers
             var userDetail = db.User.Where(u => u.Login == user.Login && u.Password == user.Password).FirstOrDefault();
             if (userDetail!=null)
             {
-                Session["userID"] = user.UsersID;
-                Session["userName"] = user.Login;
+                Session["userID"] = userDetail.UsersID;
+                Session["userName"] = userDetail.Login;
                 TempData["logIn"] = "Succesfully logged";
                 return RedirectToAction("ListBook", "Books");
             }
@@ -45,7 +45,6 @@ namespace PROGMAT.Controllers
         }
         public ActionResult LogOut()
         {
-            int userId = (int)Session["userID"];
             Session.Abandon();
             return RedirectToAction("Home", "Home"); 
         }
