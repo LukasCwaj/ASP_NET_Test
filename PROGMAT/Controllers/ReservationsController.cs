@@ -1,4 +1,5 @@
-﻿using PROGMAT.DataAccessLayer;
+﻿using PROGMAT.App_Start;
+using PROGMAT.DataAccessLayer;
 using PROGMAT.Models;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace PROGMAT.Controllers
 {
+    [AuthorizationFilter]
     public class ReservationsController : Controller
     {
         private LibraryContext db = new LibraryContext();

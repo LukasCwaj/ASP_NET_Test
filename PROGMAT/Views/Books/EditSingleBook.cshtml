@@ -8,17 +8,24 @@
 @section main{
     @using (Html.BeginForm("EditBookInDatabase", "Books", FormMethod.Post))
     {
-        @Html.AntiForgeryToken()
         @Html.HiddenFor(book => book.BooksID)
         @Html.LabelFor(book => book.Name)
         @Html.EditorFor(book => book.Name)
+        <br />
+        <br />
         @Html.LabelFor(book => book.Author)
         @Html.EditorFor(book => book.Author)
+        <br />
+        <br />
         @Html.LabelFor(book => book.Description)
         @Html.EditorFor(book => book.Description)
+        <br />
+        <br />
         @Html.LabelFor(book => book.DateOfCreation)
         @Html.TextBoxFor(book => book.DateOfCreation, "{0:dd/MM/yyyy}")
-        <button> Edit</button>
+        <br />
+        <br />
+        <button style="width:40px; text-align:center; align-self:center">Edit</button>
     }
 }
 

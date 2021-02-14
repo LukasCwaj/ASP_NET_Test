@@ -12,10 +12,9 @@
     @RenderBody()
     <header>
         @RenderSection("header", true)
-        
     </header>
     <main>
-        @if (ViewBag.Message != null) 
+        @if (ViewBag.Message != null)
         {
             <script type="text/javascript">
             window.onload = function ()
@@ -29,26 +28,30 @@
     </main>
     <aside>
         <hr style="width:80%;" />
-        @Html.ActionLink("Home Page", "Home", "Home")
-        <hr style="width:80%;" />
-        @Html.ActionLink("List of Books", "ListBook", "Books")
-        <hr style="width:80%;" />
-        @Html.ActionLink("Add Book", "AddBook", "Books")
-        <hr style="width:80%;" />
-        @Html.ActionLink("Edit Book", "EditBook", "Books")
-        <hr style="width:80%;" />
-        @Html.ActionLink("Reservations List", "ReservationList", "Reservations")
-        <hr style="width:80%;" />
+        @if (Session["userID"] != null)
+        {
+            @Html.ActionLink("List of Books", "ListBook", "Books", null, new { @class = "asideLink" })
+            <hr style="width:80%;" />
+            @Html.ActionLink("Add Book", "AddBook", "Books", null, new { @class = "asideLink" })
+            <hr style="width:80%;" />
+            @Html.ActionLink("Edit Book", "EditBook", "Books", null, new { @class = "asideLink" })
+            <hr style="width:80%;" />
+            @Html.ActionLink("Reservations List", "ReservationList", "Reservations", null, new { @class = "asideLink" })
+            <hr style="width:80%;" />
+        }
         <div>
-            @{ if (Session["userID"] == null)
+            @{
+                if (Session["userID"] == null)
                 {
-                    <label class="blue_label"> Loged as: Unknown</label> }
+                    <label class="asideLink"> Loged as: Unknown</label>
+                }
                 else
                 {
-        <label class="blue_label"> Loged as: @Session["userName"].ToString()</label>
-                    @Html.ActionLink("Log Out", "LogOut", "Users") 
-                } 
-             }
+                    <label class="asideLink"> Loged as: @Session["userName"].ToString()</label>
+                    <br />
+                    @Html.ActionLink("Log Out", "LogOut", "Users", null, new { @class = "asideLink" })
+                }
+            }
         </div>
         <hr style="width:80%;" />
     </aside>

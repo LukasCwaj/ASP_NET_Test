@@ -1,67 +1,68 @@
-﻿html{
+﻿html
+{
     height: 100%;
 }
-
 header {
     text-align: center;
-    font-style: oblique;
-    font-size: 24px;
-    color: blue;
-    font-weight: 500;
+    font-size: 36px;
+    font-family: Impact,fantasy;
+    font-weight: 300;
+    color: white;
     background-color: silver;
     width: 100%;
-    font-weight: 200;
     position: fixed;
 }
-
-main {
+main 
+{
     text-align: left;
     width: 88%;
     float: right;
     height: 100%;
     background-color: white;
-    margin-top: 27px;
+    margin-top: 39px;
 }
-
-aside {
+aside 
+{
     text-align: center;
     word-wrap: break-word;
     width: 12%;
     float: left;
     background-color: whitesmoke;
     height: 100%;
-    margin-top: 27px;
+    margin-top: 39px;
 }
-
-body {
+body 
+{
     background-color: white;
     margin:0;
     height: 100%;
 }
-
-table, th, td {
+table, th, td 
+{
     border: 1px solid black;
     margin-top: 5px; 
     text-align: center;
     word-wrap: break-word;
     max-width:90px;
 }
-label {
+label 
+{
     color: black;
     margin: 2px;
     font-size: 12px;
 }
-.blue_label {
-    color: darkblue;
-    margin: 2px;
-    font-size: 12px;
-}
-.red_label {
-    color: red;
-    margin: 2px;
-    font-size: 12px;
-}
-.ui-datepicker-calendar {
+.ui-datepicker-calendar 
+{
     display: none;
+}
+.asideLink
+{
+    color:dimgrey;
+    margin:2px;
+    font-size:18px;
+}
+.red_label
+{
+    color:red;
 }
 

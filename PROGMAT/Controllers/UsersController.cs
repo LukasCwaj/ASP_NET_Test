@@ -1,4 +1,5 @@
-﻿using PROGMAT.DataAccessLayer;
+﻿using PROGMAT.App_Start;
+using PROGMAT.DataAccessLayer;
 using PROGMAT.Models;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,11 @@ using System.Web.Mvc;
 
 namespace PROGMAT.Controllers
 {
+    [AuthorizationFilter]
     public class UsersController : Controller
     {
         private LibraryContext db = new LibraryContext();
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult CreateUser(Users user)
         {
@@ -29,6 +32,7 @@ namespace PROGMAT.Controllers
                 return RedirectToAction("Home", "Home");
             }
         }
+        [AllowAnonymous]
         public ActionResult LogIn(Users user)
         {
             var userDetail = db.User.Where(u => u.Login == user.Login && u.Password == user.Password).FirstOrDefault();

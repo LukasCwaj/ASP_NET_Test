@@ -9,12 +9,15 @@ using PROGMAT.Models;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.Infrastructure;
+using PROGMAT.App_Start;
 
 namespace PROGMAT.Controllers
 {
+    [AuthorizationFilter]
     public class BooksController : Controller
     {
         private LibraryContext db = new LibraryContext();
+
         public ActionResult AddBook()
         {
             if (TempData["bookAdded"] != null)
@@ -24,6 +27,7 @@ namespace PROGMAT.Controllers
             }
             return View();
         }
+
         public ActionResult ListBook()
         {
             if (TempData["logIn"] != null)
@@ -33,6 +37,7 @@ namespace PROGMAT.Controllers
             }
                 return View(db.Book.AsEnumerable());
         }
+
         [HttpPost]
         public ActionResult EditBook(string searchBy, string search)
         {
@@ -41,10 +46,12 @@ namespace PROGMAT.Controllers
             else
                 return View(db.Book.Where(book => book.Author == search || search == null).ToList());
         }
+
         public ActionResult EditBook()
         {
             return View(db.Book.AsEnumerable());
         }
+
         [HttpPost]
         public ActionResult AddBookToDatabase(Books book)
         {
@@ -60,17 +67,16 @@ namespace PROGMAT.Controllers
                 return View("Error",new HandleErrorInfo(e, "Books", "AddtBookToDatabase"));
             }
         }
+
         public ActionResult EditSingleBook(int? id)
         {
             Books book = db.Book.Find(id);
             if (book == null)
-            {
                 return HttpNotFound();
-            }
             return View(book);
         }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult EditBookInDatabase([Bind(Include = "BooksID,Name,Author,Description,DateOfCreation")] Books book)
         {
             try

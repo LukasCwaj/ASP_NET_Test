@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PROGMAT.App_Start;
 using PROGMAT.DataAccessLayer;
 using PROGMAT.Models;
 
 namespace PROGMAT.Controllers
 {
+    [AuthorizationFilter]
     public class SearchController : Controller
     {
         private LibraryContext db = new LibraryContext();

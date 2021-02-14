@@ -1,4 +1,5 @@
-﻿using PROGMAT.DataAccessLayer;
+﻿using PROGMAT.App_Start;
+using PROGMAT.DataAccessLayer;
 using PROGMAT.Models;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,11 @@ using System.Web.Mvc;
 
 namespace PROGMAT.Controllers
 {
+    [AuthorizationFilter]
     public class HomeController : Controller
     {
         private LibraryContext db = new LibraryContext();
-
+        [AllowAnonymous]
         public ActionResult Home()
         {
             if (TempData["failLogIn"] != null)

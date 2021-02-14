@@ -6,8 +6,6 @@
     Home Page
 }
 @section main{
-    <label class="red_label">
-    </label>
     @using (Html.BeginForm("CreateUser", "Users", FormMethod.Post))
     {
         @Html.LabelFor(user => user.Login)
