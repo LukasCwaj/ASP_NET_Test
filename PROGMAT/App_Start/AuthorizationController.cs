@@ -10,10 +10,11 @@ namespace PROGMAT.App_Start
     {
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
+            // Don't check for authorization as AllowAnonymous filter is applied to the action or controller 
             if (filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true)
-                || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true))
-            {
-                // Don't check for authorization as AllowAnonymous filter is applied to the action or controller  
+                || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined
+                (typeof(AllowAnonymousAttribute), true))
+            { 
                 return;
             }
 

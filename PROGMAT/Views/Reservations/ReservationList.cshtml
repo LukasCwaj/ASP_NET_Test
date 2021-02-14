@@ -7,13 +7,13 @@
     Reservations List
 }
 @section main{
-    @using (Html.BeginForm("EditBook", "Books", FormMethod.Post))
+    @using (Html.BeginForm("ReservationList", "Reservations", FormMethod.Post))
     {
         <b>Search By:</b>
-        @Html.RadioButton("searchBy", "Name")
-        <label>Name</label>
-        @Html.RadioButton("searchBy", "Author")
-        <label>Author</label>
+        @Html.RadioButton("searchBy", "Book")
+        <label>Book</label>
+        @Html.RadioButton("searchBy", "User")
+        <label>User</label>
         @Html.TextBox("search")
         <button> Search</button>
     }
@@ -35,7 +35,13 @@
                         <th>@item.BooksID</th>
                         <th>@item.UsersId</th>
                         <th>@item.DateOfReservations.ToString("d")</th>
-                        <th> <button onClick="location.href =' @Url.Action("DeleteReservation", "Reservations", new { idR = item.ReservationsID, idB = item.BooksID })';return false;">Click</button> </th>
+                        <th>
+                            <button onClick="location.href =' @Url.Action("DeleteReservation",
+                                                              "Reservations", new { idR = item.ReservationsID,
+                                                              idB = item.BooksID })';return false;">
+                                Click
+                            </button>
+                        </th>
                     </tr>
                 }
             }

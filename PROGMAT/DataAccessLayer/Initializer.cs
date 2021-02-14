@@ -28,6 +28,7 @@ namespace PROGMAT.DataAccessLayer
             };
             users.ForEach(i => context.User.AddOrUpdate(i));
             context.SaveChanges();
+
             var books = new List<Books>
             {
             new Books() { BooksID=1, Author="Someone1", Name="Name1", DateOfCreation=Convert.ToDateTime(DateTime.Now.ToShortDateString()), Description="Description1", IsReserved=true, ReservationsID=1, UsersId=7},
@@ -39,6 +40,7 @@ namespace PROGMAT.DataAccessLayer
             };
             books.ForEach(i => context.Book.AddOrUpdate(i));
             context.SaveChanges();
+
             var reservations = new List<Reservations>
             {
             new Reservations() { ReservationsID=1, DateOfReservations=DateTime.Today },

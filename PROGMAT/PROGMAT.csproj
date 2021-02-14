@@ -118,7 +118,6 @@
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DataAccessLayer\Initializer.cs" />
     <Compile Include="DataAccessLayer\LibraryContext.cs" />
@@ -149,7 +148,6 @@
     <Content Include="Views\Books\EditBook.cshtml" />
     <Content Include="Views\Books\ListBook.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Search\SearchBook.cshtml" />
     <Content Include="Views\Books\EditSingleBook.cshtml" />
     <Content Include="Views\Reservations\ReservationList.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
